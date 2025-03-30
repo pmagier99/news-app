@@ -62,7 +62,6 @@ import { useWindowSize } from "@vueuse/core";
 import { ref } from "vue";
 import type { NavigationMenuItem } from "@nuxt/ui";
 
-const { width } = useWindowSize();
 const items = ref<NavigationMenuItem[]>([
   {
     label: "Home",
@@ -87,6 +86,7 @@ const items = ref<NavigationMenuItem[]>([
   },
 ]);
 
+const { width } = useWindowSize();
 const open = ref(false);
 </script>
 
