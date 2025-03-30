@@ -6,7 +6,7 @@
     <UseWindowSize> Width: {{ width }} </UseWindowSize>
     <div class="md:col-span-2">
       <img
-        :src="width >= 768 ? blok.image.filename : blok.mobileImage.filename"
+        :src="width && width >= 768 ? blok.image.filename : blok.mobileImage.filename"
         class="h-full"
       />
     </div>

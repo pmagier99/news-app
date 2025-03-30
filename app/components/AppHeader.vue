@@ -4,7 +4,7 @@
 
     <!-- desktop -->
     <UNavigationMenu
-      v-if="width >= 768"
+      v-if="width && width >= 768"
       :items="items"
       class="justify-center"
       variant="link"
