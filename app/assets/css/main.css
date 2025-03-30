@@ -1,0 +1,79 @@
+@import "tailwindcss";
+@import "@nuxt/ui";
+
+@font-face {
+  font-family: "Inter";
+  src: url("@/assets/fonts/static/Inter-Regular.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Inter";
+  src: url("@/assets/fonts/static/Inter-Bold.ttf") format("truetype");
+  font-weight: bold;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Inter";
+  src: url("@/assets/fonts/static/Inter-ExtraBold.ttf") format("truetype");
+  font-weight: 800;
+  font-style: normal;
+}
+
+body {
+  font-family: "Inter", sans-serif;
+}
+
+:root {
+  --ui-radius: var(--radius-none);
+  
+}
+
+@utility container {
+  margin-inline: auto;
+  padding-inline: 1rem;
+}
+
+@theme static {
+  /* --color-primary: #ee5045;
+  --color-secondary: #000019;
+  --color-accent: #e4a04d; */
+
+  --color-coral-red-50: #fef3f2;
+  --color-coral-red-100: #fee4e2;
+  --color-coral-red-200: #fecdca;
+  --color-coral-red-300: #fbaca6;
+  --color-coral-red-400: #f77b72;
+  --color-coral-red-500: #ee5045;
+  --color-coral-red-600: #db3327;
+  --color-coral-red-700: #b8271d;
+  --color-coral-red-800: #98241c;
+  --color-coral-red-900: #7e241e;
+  --color-coral-red-950: #450e0a;
+
+  --color-ebony-50: #e4efff;
+  --color-ebony-100: #cfe0ff;
+  --color-ebony-200: #a8c4ff;
+  --color-ebony-300: #749dff;
+  --color-ebony-400: #3e61ff;
+  --color-ebony-500: #1328ff;
+  --color-ebony-600: #0010ff;
+  --color-ebony-700: #0010ff;
+  --color-ebony-800: #000ee4;
+  --color-ebony-900: #0005b0;
+  --color-ebony-950: #000019;
+
+  --color-fire-bush-50: #fdf7ed;
+  --color-fire-bush-100: #f8e8cd;
+  --color-fire-bush-200: #efcf98;
+  --color-fire-bush-300: #e7b162;
+  --color-fire-bush-400: #e4a04d;
+  --color-fire-bush-500: #d97927;
+  --color-fire-bush-600: #c0591f;
+  --color-fire-bush-700: #a0401d;
+  --color-fire-bush-800: #82331e;
+  --color-fire-bush-900: #6c2a1b;
+  --color-fire-bush-950: #3d130b;
+}
