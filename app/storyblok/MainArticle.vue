@@ -1,9 +1,14 @@
 <template>
   <div class="md:grid md:grid-cols-2 md:gap-10 gap-5 flex flex-col">
-    <div class="md:col-span-2 ">
-      <img :src="blok.image.filename" class="h-full" />
+    <div class="md:col-span-2">
+      <img
+        :src="width >= 768 ? blok.image.filename : blok.mobileImage.filename "
+        class="h-full"
+      >
     </div>
-    <div class="md:text-6xl text-4xl font-bold text-black">{{ blok.title }}</div>
+    <div class="md:text-6xl text-4xl font-bold text-black">
+      {{ blok.title }}
+    </div>
     <div class="flex flex-col justify-between md:gap-0 gap-5">
       <p class="text-base/7 text-gray-500">
         {{ blok.description }}
@@ -18,6 +23,10 @@
 </template>
 
 <script setup>
+import { useWindowSize } from "@vueuse/core";
+
+const { width } = useWindowSize();
+
 defineProps(["blok"]);
 </script>
 

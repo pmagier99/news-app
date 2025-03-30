@@ -4,18 +4,19 @@
 
     <!-- desktop -->
     <UNavigationMenu
+      v-if="width >= 768"
       :items="items"
-      class="justify-center hidden md:block"
+      class="justify-center"
       variant="link"
       color="gray"
     />
 
     <!-- mobile -->
-    <UDrawer direction="right" :handle="false" v-model:open="open">
+    <UDrawer v-else direction="right" :handle="false" v-model:open="open">
       <UButton
         variant="soft"
         icon="i-lucide-align-justify"
-        class="md:hidden bg-transparent"
+        class="bg-transparent"
         color="secondary"
         :ui="{
           leadingIcon: 'size-15',
@@ -57,9 +58,11 @@
 </template>
 
 <script setup lang="ts">
+import { useWindowSize } from "@vueuse/core";
 import { ref } from "vue";
 import type { NavigationMenuItem } from "@nuxt/ui";
 
+const { width } = useWindowSize();
 const items = ref<NavigationMenuItem[]>([
   {
     label: "Home",
