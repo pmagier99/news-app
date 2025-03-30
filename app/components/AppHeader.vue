@@ -87,6 +87,13 @@ const items = ref<NavigationMenuItem[]>([
 ]);
 
 const { width } = useWindowSize();
+const screenWidth = ref(width.value); // Manually track width
+
+// Ensure reactivity on mobile
+watchEffect(() => {
+  screenWidth.value = width.value;
+});
+
 const open = ref(false);
 </script>
 
