@@ -1,5 +1,5 @@
 <template>
-  <div class="flex gap-x-4 items-center">
+  <div  v-editable="blok" class="flex gap-x-4 items-center">
     <div class="w-32 h-full flex-shrink-0">
       <img :src="blok.image.filename" class="w-full h-full object-cover" />
     </div>

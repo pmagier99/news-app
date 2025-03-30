@@ -1,5 +1,5 @@
 <template>
-  <div class="py-4">
+  <div v-editable="blok" class="py-4" >
     <div
       class="text-lg font-bold text-white hover:text-fire-bush-400 cursor-pointer"
     >

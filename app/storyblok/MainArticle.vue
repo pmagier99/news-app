@@ -1,5 +1,9 @@
 <template>
-  <div class="md:grid md:grid-cols-2 md:gap-10 gap-5 flex flex-col">
+  <div
+    v-editable="blok"
+    class="md:grid md:grid-cols-2 md:gap-10 gap-5 flex flex-col"
+  >
+    <UseWindowSize> Width: {{ width }} </UseWindowSize>
     <div class="md:col-span-2">
       <img
         :src="width >= 768 ? blok.image.filename : blok.mobileImage.filename"
