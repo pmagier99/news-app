@@ -1,12 +1,11 @@
 <template>
   <header class="container flex justify-between items-center py-12">
     <img src="/images/logo.svg" />
-    <pre>{{ items }}</pre>
     <!-- desktop -->
     <UNavigationMenu
       v-if="width && width >= 768"
       :items="items"
-      class="justify-center"
+      class="justify-center "
       variant="link"
       color="gray"
     />
@@ -62,29 +61,7 @@ import { useWindowSize } from "@vueuse/core";
 import { ref } from "vue";
 import type { NavigationMenuItem } from "@nuxt/ui";
 
-const items = ref<NavigationMenuItem[]>([
-  // {
-  //   label: "Home",
-  //   to: "/",
-  // },
-  // {
-  //   label: "New",
-  //   to: "/",
-  // },
-  // {
-  //   label: "Popular",
-  //   to: "/",
-  // },
-  // {
-  //   label: "Trending",
-  //   to: "/",
-  // },
-  // {
-  //   label: "Categories",
-  //   to: "/",
-  //   class: "md:px-0 md:pl-5",
-  // },
-]);
+// const items = ref<NavigationMenuItem[]>([]);
 
 const { width } = useWindowSize();
 const screenWidth = ref(width.value); // Manually track width
@@ -96,35 +73,14 @@ watchEffect(() => {
 
 const open = ref(false);
 
-const storyblokApi = useStoryblokApi();
-
-const renderMenuNavBar = async () => {
-  const { data } = await useAsyncData(() =>
-    storyblokApi.get("/cdn/stories", {
-      starts_with: "global/",
-      is_startpage: 0,
-    })
-  );
-
-  if (data.value?.data?.stories?.length) {
-    const menuItems = data.value.data.stories[0]?.content?.nav_menu || [];
-
-    console.log("menuItems", menuItems);
-    
-    menuItems.forEach((item) => {
-      if (item?.label && item?.link?.url) {
-        items.value.push({
-          label: item.label,
-          to: "/" + item.link.url,
-        });
-      }
-    });
-  }
-};
-
-
-onMounted(async () => {
-  await renderMenuNavBar();
+const config = useState("config");
+const items = computed(() => {
+  return config.value?.content?.nav_menu.map((link)=>{
+    return {
+      label: link.label,
+      to: link.link.url,
+    }
+  })
 });
 </script>
 

@@ -1,0 +1,1 @@
+// export const useConfig = () => useState<object>('config', () => ({}))
