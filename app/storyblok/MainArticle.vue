@@ -3,10 +3,14 @@
     v-editable="blok"
     class="md:grid md:grid-cols-2 md:gap-10 gap-5 flex flex-col"
   >
-    <UseWindowSize> Width: {{ width }} </UseWindowSize>
     <div class="md:col-span-2">
-      <img
-        :src="width && width >= 768 ? blok.image.filename : blok.mobileImage.filename"
+      <NuxtImg
+        provider="storyblok"
+        :src="
+          width >= 768
+            ? blok.image.filename
+            : blok.mobileImage.filename
+        "
         class="h-full"
       />
     </div>

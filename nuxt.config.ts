@@ -9,9 +9,17 @@ export default defineNuxtConfig({
       ]
     }
   },
+  image: {
+    storyblok: {
+      baseURL: "https://a.storyblok.com",
+    },
+    unsplash: {
+      baseURL: "https://source.unsplash.com",
+    },
+  },
   compatibilityDate: "2024-11-01",
   devtools: { enabled: true },
-  modules: ["@nuxt/ui", "@nuxt/eslint", "@storyblok/nuxt"],
+  modules: ["@nuxt/ui", "@nuxt/eslint", "@storyblok/nuxt", "@nuxt/image"],
   future: {
     compatibilityVersion: 4,
   },
