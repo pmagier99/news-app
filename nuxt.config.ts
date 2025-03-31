@@ -19,7 +19,13 @@ export default defineNuxtConfig({
   },
   compatibilityDate: "2024-11-01",
   devtools: { enabled: true },
-  modules: ["@nuxt/ui", "@nuxt/eslint", "@storyblok/nuxt", "@nuxt/image"],
+  modules: [
+    "@nuxt/ui",
+    "@nuxt/eslint",
+    "@storyblok/nuxt",
+    "@nuxt/image",
+    "@nuxt/scripts"
+  ],
   future: {
     compatibilityVersion: 4,
   },
@@ -35,6 +41,13 @@ export default defineNuxtConfig({
     https: {
       key: './localhost-key.pem',
       cert: './localhost.pem'
+    }
+  },
+  scripts: {
+    registry: {
+      googleTagManager: {
+        id: 'GTM-P4Z2NG8P'
+      }
     }
   }
 });

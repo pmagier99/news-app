@@ -12,8 +12,10 @@
   "dependencies": {
     "@nuxt/eslint": "1.2.0",
     "@nuxt/image": "1.10.0",
+    "@nuxt/scripts": "0.11.5",
     "@nuxt/ui": "^3.0.2",
     "@storyblok/nuxt": "6.2.4",
+    "@unhead/vue": "^2.0.0-rc.8",
     "@vueuse/core": "^13.0.0",
     "eslint": "^9.0.0",
     "nuxt": "^3.16.1",
